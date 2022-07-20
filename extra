@@ -91,12 +91,12 @@ npm  > node package manager
 //////Step to install package/////
 ** Nodejs must be installed in your laptop
 > open terminal and go inside this folder
-> npm i packagename / npm install packagename
+> npm i package name / npm install package name
 
 ///How to generate react app///
 ** Nodejs must be installed in your laptop
 > open terminal and go inside this folder
-> npx create-react-app appname
+> npx create-react-app app name
 
 ////////////////////
 # windows
