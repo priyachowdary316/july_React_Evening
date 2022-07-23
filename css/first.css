@@ -1,0 +1,42 @@
+h1 {
+    color: brown;
+  }
+  #heading {
+   text-align:center
+  }
+  #main{
+    display: inline-block;
+  }
+  .card{
+   height:400px;
+   background-color:orange;
+   width: 20%;
+   float: left;
+   margin: 2%; 
+   overflow: scroll;
+  }
+  .cardText{
+       overflow: scroll; 
+       height: 200px;
+  }
+  .pink{
+   background-color: pink;
+  }
+  #purple{
+   background-color: purple;
+  }
+  .yellow {
+   background-color: yellow;
+  }
+  header, footer{
+   text-align: center;
+   color: darkblue;
+  }
+  .card > img{
+     height: 200px;
+     width: 100%;
+  }
+  .card h1{
+   text-align: center;
+   color: black;
+  }
