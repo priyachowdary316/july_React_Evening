@@ -180,6 +180,13 @@ Id
 >use to target particular element of the page
 Class
 > use to target multiple element with same property
+>
+
+position: absolute
+position: relative
+
+> https://htmlcolorcodes.com/
+> https://imgbb.com/
 
 
 
