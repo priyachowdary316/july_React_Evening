@@ -1,0 +1,18 @@
+https://raw.githubusercontent.com/Aakashdeveloper/Aakashdeveloper/master/README.md
+
+//first Time from new new folder
+git init
+git add .
+git commit -m "first commit"
+git remote add origin https://github.com/priyachowdary316/codecommit.git
+git push -u origin master
+
+// next all time
+git add .
+git commit -m "first commit"
+git push
+
+//
+git clone https://github.com/priyachowdary316/codecommit
+
+//////
