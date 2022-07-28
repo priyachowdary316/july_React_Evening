@@ -4,7 +4,7 @@ https://raw.githubusercontent.com/Aakashdeveloper/Aakashdeveloper/master/README.
 git init
 git add .
 git commit -m "first commit"
-git remote add origin https://github.com/priyachowdary316/codecommit.git
+git remote add origin https://priyachowdary316:PAT@github.com/priyachowdary316/codecommit.git
 git push -u origin master
 
 // next all time
