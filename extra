@@ -219,6 +219,19 @@ bootstrap5
 
 https://www.w3schools.com/howto/howto_css_image_overlay.asap
 
+///////////////
+function add(a,b){
+    return a+b
+}
+
+add(1,2)
+
+///es6////
+let add = (a,b) => {return a+b}
+add(1,2)
+
+es > Ecma Script
+
 Demo: 01 ( 06-07-2022)
 Video Link :  shorturl.at/cix07
 Password :  1%9YVYei
