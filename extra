@@ -232,6 +232,24 @@ add(1,2)
 
 es > Ecma Script
 
+///////////////
+React > Main Library
+Reaction > Help to display contact on screen
+ReactScript > Help to run the app
+
+function add(a,b){
+    return a,b
+}
+add(1,2)
+2
+
+function add(a,b){
+    var out = [a,b]
+    return out
+}
+add(1,2)
+[1,2]
+
 Demo: 01 ( 06-07-2022)
 Video Link :  shorturl.at/cix07
 Password :  1%9YVYei
