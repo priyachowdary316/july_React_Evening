@@ -1,13 +1,13 @@
-import React from 'react';
+import React,{Fragment} from "react";
 
 const Footer = () => {
     return(
-        <div>
+        <React.Fragment>
             <hr/>
             <center>
                 <h3>&copy; Developer Funnel</h3>
             </center>
-        </div>
+        </React.Fragment>
     )
 }
 
