@@ -12,10 +12,15 @@ import Product from './productDisplay';
           productData:JSON
         }
       }
+
+      filterData = () => {
+
+      }
+
     render(){
         return (
             <>
-              <Header/>
+              <Header userInput={(data) => {console.log('inside home',data)}}/>
               <Product productData={this.state.productData}/>
               <Footer year="2022" month="July"/>
             </>
