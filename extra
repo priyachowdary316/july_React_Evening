@@ -354,6 +354,13 @@ add(1,2)
 > no need to define anywhere
 > use to pass more than one value
 
+///////////////////////////////////////
+default props
+///////////////////////////////////////
+History > for redirection
+Location > for queryParams
+Match > for params
+
 
 Demo: 01 ( 06-07-2022)
 Video Link :  shorturl.at/cix07
