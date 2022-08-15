@@ -1,0 +1,30 @@
+footer{
+    height:60px;
+    margin-top:2%;
+    height:120px;
+    width:100%;
+    border:2px groove green;
+    background-color:#3b2632;
+    color: white;
+    text-align: center;
+}
+
+ul{
+    list-style: none;
+}
+
+.footDiv{
+    float:left;
+    width:32%;
+    border-right: 2px solid white;
+}
+
+.noborder{
+    border:none
+}
+
+@media screen and (max-width: 1600px){
+    body{
+        background-color: aqua;
+    }
+}
