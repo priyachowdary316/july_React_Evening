@@ -3,6 +3,8 @@
     margin-top: 5%;
 }
 
+
+
 #filter{
     height:600px;
     width:20%;
@@ -65,5 +67,7 @@
 }
 
 .labelDiv{
-    margin-top:5%
+    margin-top:5%;
+    font-size:15px;
+    font-size:25px;
 }
