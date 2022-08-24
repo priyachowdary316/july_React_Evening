@@ -1,5 +1,4 @@
 import React,{Component} from 'react';
-
 class MenuDisplay extends Component {
     orderId = [];
 
@@ -27,7 +26,6 @@ class MenuDisplay extends Component {
                 )
             })
         }
-    }
 
     render(){
         return(
