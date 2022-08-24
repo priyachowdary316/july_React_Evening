@@ -5,18 +5,26 @@ import 'react-tabs/style/react-tabs.css';
 import './details.css';
 import {Link} from 'react-router-dom';
 import MenuDisplay from './menuDisplay';
-
 const url = "http://zomatoajulypi.herokuapp.com/details"
 const menuUrl = "https://zomatoajulypi.herokuapp.com/menu"
 class Details extends Component{
     constructor(){
         super()
-
         this.state={
             details:'',
             menuList:'',
-            mealId: sessionStorage.getItem('mealId')?sessionStorage.getItem('mealId'):1
+            mealId: sessionStorage.getItem('mealId')?sessionStorage.getItem('mealId'):1,
+            userItem:''
         }
+    }
+
+    addToCart = (data) => {
+        this.setState({userItem:data})
+    }
+
+    proceed = () => {
+        sessionStorage.setItem('menu',this.state.userItem);
+        this.props.history.push(`/placeOrder/${this.state.details.restaurant_name}`)
     }
 
     render(){
@@ -51,7 +59,6 @@ class Details extends Component{
                                 <Tab>About</Tab>
                                 <Tab>Contact</Tab>
                             </TabList>
-
                             <TabPanel>
                                 <h2>{details.restaurant_name}</h2>
                                 <p>
@@ -65,14 +72,17 @@ class Details extends Component{
                         </Tabs>
                         <Link to={`/listing/${this.state.mealId}`} className="btn btn-danger">Back</Link>
                         &nbsp;
-                        <button className="btn btn-success">Proceed</button>
+                        <button className="btn btn-success" 
+                        onClick={this.proceed}>Proceed</button>
                     </div>
                     <div className="col-md-12">
                         <center><h2>Menu</h2></center>
-                        <MenuDisplay menudata={this.state.menuList}/>
+                        <MenuDisplay menudata={this.state.menuList}
+                        finalOrder={(data)=>{this.addToCart(data)}}/>
                     </div>
                 </div>
-                </>
+
+            </>
         )
     }
     //api with async await 
