@@ -26,7 +26,6 @@ class Listing extends Component {
                  </div>
               </div>
             </>
-        
         )
 }
 
@@ -40,6 +39,5 @@ class Listing extends Component {
 
 }
 
-}
 
 export default Listing;
