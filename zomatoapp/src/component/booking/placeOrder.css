@@ -1,5 +1,5 @@
 .orderItems{
-    float: left;
+    display:flex;
     height:300px;
     width:250px;
     margin:2%;
@@ -7,6 +7,6 @@
 }
 
 .orderItem > img{
-    height:200px;
+    height:100%;
     width:100%;
 }
