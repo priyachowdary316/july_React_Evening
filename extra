@@ -418,14 +418,22 @@ a.splice(a.indexOf(23),1)
 ////dummy api
 npx json-server --watch order.json --port 3000 
 
+//////////////
+/******GetAllUser*****/
+(GET)> https://developerjwt.herokuapp.com/api/auth/users
 
-Demo: 01 ( 06-07-2022)
-Video Link :  shorturl.at/cix07
-Password :  1%9YVYei
+/******Register*****/
+(POST)> https://developerjwt.herokuapp.com/api/auth/register
+(body) => {"name":"Aakash", "email":"aa@gmail.com","password":"12345678","phone":343432,role?":"user"}
 
-Demo: 02 ( 07-07-2022)
-Video Link : shorturl.at/puz34
-Password : 1yzXt&Yd
+/******Login*****/
+(POST) => https://developerjwt.herokuapp.com/api/auth/login
+(body)  => {"email":"aa@gmail.com","password":"12345678"}
+(response)=> {auth:true,token:'dgsdg'}
+
+/******UserInfo*****/
+(GET) => https://developerjwt.herokuapp.com/api/auth/userinfo
+(Header) => {'x-access-token':'token value from login'}
 
 
 

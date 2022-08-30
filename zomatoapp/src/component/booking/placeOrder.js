@@ -8,7 +8,7 @@ class PlaceOrder extends Component{
 
     constructor(props){
         super(props)
-        
+
         this.state={
             id:Math.floor(Math.random()*100000),
             hotel_name:this.props.match.params.restName,
@@ -27,6 +27,7 @@ class PlaceOrder extends Component{
 
     handleCheckout = () => {
         let obj = this.state;
+        
         obj.menuItem = sessionStorage.getItem('menu');
         fetch(placeOrder,{
             method:'POST',
