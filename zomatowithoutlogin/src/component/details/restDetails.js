@@ -5,10 +5,10 @@ import 'react-tabs/style/react-tabs.css';
 import './details.css';
 import {Link} from 'react-router-dom';
 import MenuDisplay from './menuDisplay';
-import Header from '../../Header'
 
 const url = "http://zomatoajulypi.herokuapp.com/details"
 const menuUrl = "https://zomatoajulypi.herokuapp.com/menu"
+
 class Details extends Component{
     constructor(){
         super()
@@ -19,19 +19,21 @@ class Details extends Component{
             userItem:''
         }
     }
+
     addToCart = (data) => {
         this.setState({userItem:data})
     }
+
     proceed = () => {
         sessionStorage.setItem('menu',this.state.userItem);
         this.props.history.push(`/placeOrder/${this.state.details.restaurant_name}`)
     }
+
     render(){
         //let details = this.state.details
         let {details} = this.state
         return(
             <>
-                <Header/>
                 <div className="main">
                     <div className="tileImage">
                         <div className="imageClass">
@@ -81,7 +83,7 @@ class Details extends Component{
                         finalOrder={(data)=>{this.addToCart(data)}}/>
                     </div>
                 </div>
-                
+
             </>
         )
     }

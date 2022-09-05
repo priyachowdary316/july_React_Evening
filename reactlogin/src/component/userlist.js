@@ -11,6 +11,12 @@ class ViewUser extends Component{
     }
 
     render(){
+        if(sessionStorage.getItem('ltk') === null){
+            this.props.history.push('/')
+        }
+        if(sessionStorage.getItem('ltk') !== null && sessionStorage.getItem('rtk') !=='Admin'){
+            this.props.history.push('/profile')
+        }
         return(
             <>
                 <UserDisplay userData={this.state.users}/>
@@ -21,3 +27,5 @@ class ViewUser extends Component{
         axios.get(`${url}`).then((res) => {this.setState({users:res.data})})
     }
 }
+
+export default ViewUser;

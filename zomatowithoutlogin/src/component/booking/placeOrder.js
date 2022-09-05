@@ -1,12 +1,14 @@
 import React,{Component} from 'react';
 import './placeOrder.css';
-import Header from '../../Header'
 
 const url = "http://zomatoajulypi.herokuapp.com/menuItem";
 const placeOrder = "http://localhost:3000/orders"
+
 class PlaceOrder extends Component{
+
     constructor(props){
         super(props)
+
         this.state={
             id:Math.floor(Math.random()*100000),
             hotel_name:this.props.match.params.restName,
@@ -18,9 +20,11 @@ class PlaceOrder extends Component{
             menuItem:''
         }
     }
+
     handleChange = (event) => {
         this.setState({[event.target.name]:event.target.value})
     }
+
     handleCheckout = () => {
         let obj = this.state;
         
@@ -35,6 +39,7 @@ class PlaceOrder extends Component{
         })
         .then(this.props.history.push(`/viewBooking`))
     }
+
     renderItem = (data) => {
         if(data){
             return data.map((item) => {
@@ -51,16 +56,14 @@ class PlaceOrder extends Component{
 
     render(){
         return(
-            <>
-            <Header/>
-            <div className="container">
+           <div className="container">
                <div className="panel panel-primary">
                    <div className="panel-heading">
                     <h3>Your Order Form Restaurant {this.state.hotel_name}</h3>
                    </div>
                    <div className="panel-body">
                        <form>
-                           <div className="row">
+                       <div className="row">
                                <input type="hidden" name="cost" value={this.state.cost}/>
                                <input type="hidden" name="id" value={this.state.id}/>
                                <input type="hidden" name="hotel_name" value={this.state.hotel_name}/>
@@ -96,7 +99,6 @@ class PlaceOrder extends Component{
                    </div>
                </div>
             </div>
-            </>
         )
     }
 
@@ -128,4 +130,5 @@ class PlaceOrder extends Component{
         })
     }
 }
-export default PlaceOrder;
+
+export default PlaceOrder; 
