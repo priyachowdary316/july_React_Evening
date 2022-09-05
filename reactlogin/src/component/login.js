@@ -1,9 +1,6 @@
 import React,{Component} from 'react';
-
 const url = "https://developerjwt.herokuapp.com/api/auth/login";
-
 class Login extends Component{
-
     constructor(props){
         super(props)
 
@@ -53,7 +50,6 @@ class Login extends Component{
 
                            </div>
                            <button className="btn btn-success" onClick={this.handleCheckout} >Login</button>
-                       </form>
                    </div>
                </div>
             </div>

@@ -20,11 +20,9 @@ class PlaceOrder extends Component{
             menuItem:''
         }
     }
-
     handleChange = (event) => {
         this.setState({[event.target.name]:event.target.value})
     }
-
     handleCheckout = () => {
         let obj = this.state;
         
@@ -39,7 +37,6 @@ class PlaceOrder extends Component{
         })
         .then(this.props.history.push(`/viewBooking`))
     }
-
     renderItem = (data) => {
         if(data){
             return data.map((item) => {
@@ -130,5 +127,4 @@ class PlaceOrder extends Component{
         })
     }
 }
-
 export default PlaceOrder; 

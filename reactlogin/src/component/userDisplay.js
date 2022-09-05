@@ -17,7 +17,6 @@ const UserDisplay = (props) => {
             })
         }
     }
-
     return(
         <div className="container">
             <center><h3>Users</h3></center>
@@ -38,6 +37,4 @@ const UserDisplay = (props) => {
         </div>
     )
 }
-
-
-export default UserDisplay; 
+export default UserDisplay;
