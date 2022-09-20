@@ -5,22 +5,27 @@ import Header from '../../Header'
 const url = "http://zomatoajulypi.herokuapp.com/menuItem";
 const placeOrder = "http://localhost:3000/orders"
 class PlaceOrder extends Component{
+
     constructor(props){
         super(props)
+
+          let sessionData = sessionStorage.getItem('userInfo')?sessionStorage.getItem('userInfo').split(','):[]
         this.state={
             id:Math.floor(Math.random()*100000),
             hotel_name:this.props.match.params.restName,
-            name:'Nikita',
-            email:'Nikki@gmail.com',
+            name:sessionData?sessionData[0]:'',
+            email:sessionData?sessionData[1]:'',
             cost:0,
-            phone:87867678,
+            phone:sessionData?sessionData[2]:'',
             address:"YRT 45/13",
             menuItem:''
         }
     }
+
     handleChange = (event) => {
         this.setState({[event.target.name]:event.target.value})
     }
+
     handleCheckout = () => {
         let obj = this.state;
         
@@ -50,6 +55,17 @@ class PlaceOrder extends Component{
     }
 
     render(){
+        if(sessionStorage.getItem('loginStatus') === 'LoggedOut'){
+            return(
+                <>
+                    <Header/>
+                    <center>
+                        <h2>Login First To Place Order</h2>
+                    </center>
+                </>
+            )
+
+        }
         return(
             <>
             <Header/>
