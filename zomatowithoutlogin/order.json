@@ -1,34 +1,100 @@
 {
-    "orders":[
-        {
-            "id": 733,
-            "hotel_name": "Pandit Ji Paratha Hut",
-            "name": "Nikita",
-            "email": "Nikki@gmail.com",
-            "cost": 275,
-            "phone": 87867678,
-            "address": "YRT 45/13",
-            "menuItem": "6,7,8,9"
-          },
-          {
-            "id": 44376,
-            "hotel_name": "Food Adda",
-            "name": "Amit",
-            "email": "amit@gmail.com",
-            "cost": 867,
-            "phone": 87867678,
-            "address": "YRT 45/13",
-            "menuItem": "11,12,13"
-          },
-          {
-            "id": 73730,
-            "hotel_name": "Burger King",
-            "name": "Nikita",
-            "email": "Nikki@gmail.com",
-            "cost": 268,
-            "phone": 87867678,
-            "address": "YRT 45/13",
-            "menuItem": "51,52"
-          }
-    ]
+  "orders": [
+    {
+      "id": 733,
+      "hotel_name": "Pandit Ji Paratha Hut",
+      "name": "Nikita",
+      "email": "Nikki@gmail.com",
+      "cost": 275,
+      "phone": 87867678,
+      "address": "YRT 45/13",
+      "menuItem": "6,7,8,9"
+    },
+    {
+      "id": 44376,
+      "hotel_name": "Food Adda",
+      "name": "Amit",
+      "email": "amit@gmail.com",
+      "cost": 867,
+      "phone": 87867678,
+      "address": "YRT 45/13",
+      "menuItem": "11,12,13"
+    },
+    {
+      "id": 73730,
+      "hotel_name": "Burger King",
+      "name": "Nikita",
+      "email": "Nikki@gmail.com",
+      "cost": 268,
+      "phone": 87867678,
+      "address": "YRT 45/13",
+      "menuItem": "51,52"
+    },
+    {
+      "id": 55466,
+      "hotel_name": "Domino's Pizza",
+      "name": "Ruchika",
+      "email": "ruchi@gmail.com",
+      "cost": 328,
+      "phone": "87867678",
+      "address": "YRT 45/13",
+      "menuItem": "1,2"
+    },
+    {
+      "id": 27176,
+      "hotel_name": "Chandni Chowk 2 Bangalore",
+      "name": "Ruchika",
+      "email": "ruchi@gmail.com",
+      "cost": 323.45,
+      "phone": "87867678",
+      "address": "YRT 45/13",
+      "menuItem": "62,63"
+    },
+    {
+      "id": 88985,
+      "hotel_name": "Food Adda",
+      "name": "Ruchika",
+      "email": "ruchi@gmail.com",
+      "cost": 518,
+      "phone": "87867678",
+      "address": "YRT 45/13",
+      "menuItem": "11,12"
+    },
+    {
+      "id": 6125,
+      "hotel_name": "Burger King",
+      "name": "Geetika",
+      "email": "geetika@gmail.com",
+      "cost": 269.14,
+      "phone": "8936464566",
+      "address": "YRT 45/13",
+      "menuItem": "54,55"
+    },
+    {
+      "id": 75490,
+      "hotel_name": "The Appetite Momos",
+      "name": "Ruchika",
+      "email": "ruchi@gmail.com",
+      "cost": 195,
+      "phone": "87867678",
+      "address": "YRT 45/13",
+      "menuItem": "16,17",
+      "status": "TXN_SUCCESS",
+      "date": "2022-09-05%2021:45:30.0",
+      "bank_name": "HDFC%20Bank"
+    },
+    {
+      "id": 27406,
+      "hotel_name": "Pandit Ji Paratha Hut",
+      "name": "Ruchika",
+      "email": "ruchi@gmail.com",
+      "cost": 255,
+      "phone": "87867678",
+      "address": "YRT 45/13",
+      "menuItem": "6,7,8",
+      "status": "TXN_SUCCESS",
+      "date": "2022-09-05%2021:52:19.0",
+      "bank_name": "Axis%20Bank"
+    }
+  ]
 }
