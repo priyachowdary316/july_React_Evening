@@ -6,8 +6,7 @@ const placeOrder = "http://localhost:3000/orders"
 class PlaceOrder extends Component{
     constructor(props){
         super(props)
-
-          let sessionData = sessionStorage.getItem('userInfo')?sessionStorage.getItem('userInfo').split(','):[]
+        let sessionData = sessionStorage.getItem('userInfo')?sessionStorage.getItem('userInfo').split(','):[]
         this.state={
             id:Math.floor(Math.random()*100000),
             hotel_name:this.props.match.params.restName,
@@ -34,8 +33,10 @@ class PlaceOrder extends Component{
             },
             body:JSON.stringify(obj)
         })
-        .then(this.props.history.push(`/viewBooking`))
+        //.then(this.props.history.push(`/viewBooking`))
+        .then(console.log('Order Added'))
     }
+
     renderItem = (data) => {
         if(data){
             return data.map((item) => {
@@ -51,6 +52,17 @@ class PlaceOrder extends Component{
     }
 
     render(){
+        if(sessionStorage.getItem('loginStatus') === 'LoggedOut'){
+            return(
+                <>
+                    <Header/>
+                    <center>
+                        <h2>Login First To Place Order</h2>
+                    </center>
+                </>
+            )
+
+        }
         return(
             <>
             <Header/>
@@ -60,7 +72,7 @@ class PlaceOrder extends Component{
                     <h3>Your Order Form Restaurant {this.state.hotel_name}</h3>
                    </div>
                    <div className="panel-body">
-                       <form>
+                       <form action="https://developerpayment.herokuapp.com/paynow" method="POST">
                            <div className="row">
                                <input type="hidden" name="cost" value={this.state.cost}/>
                                <input type="hidden" name="id" value={this.state.id}/>
@@ -92,7 +104,8 @@ class PlaceOrder extends Component{
                                    <h2>Total Price is Rs. {this.state.cost}</h2>
                                </div>
                            </div>
-                           <button className="btn btn-success" onClick={this.handleCheckout} >Checkout</button>
+                           <button className="btn btn-success" onClick={this.handleCheckout} 
+                           type="submit">Checkout</button>
                        </form>
                    </div>
                </div>

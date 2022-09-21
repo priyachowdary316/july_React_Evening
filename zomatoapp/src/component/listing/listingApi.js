@@ -11,13 +11,16 @@ const url = "https://zomatoajulypi.herokuapp.com/restaurant?mealtype_id=";
 class Listing extends Component {
     constructor(props){
         super(props)
+
         this.state={
             restaurantList:''
         }
     }
+
     setDataPerFilter=(data) =>{
         this.setState({restaurantList:data})
     }
+
     render(){
         return(
             <>

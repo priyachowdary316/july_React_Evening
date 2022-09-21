@@ -1,14 +1,14 @@
-import React,{Component} from "react";
+import React,{Component} from 'react';
 import './Search.css';
+import {withRouter} from 'react-router-dom'
 
 const lurl = "https://zomatoajulypi.herokuapp.com/location";
-const restUrl = "https://zomatoajulypi.herokuapp.com/restaurant?stateId=1";
-
+const restUrl = "https://zomatoajulypi.herokuapp.com/restaurant?stateId="
 class Search extends Component {
-
+    
     constructor(){
         super()
-        console.log(">>>>>>inside constructor")
+        console.log(">>>>inside constructor")
         this.state={
             location:'',
             restData:''
@@ -19,9 +19,7 @@ class Search extends Component {
         if(data){
             return data.map((item) => {
                 return(
-                    <option value={item.state_id} key={item.state_id}>
-                        {item.state}
-                    </option>
+                    <option value={item.state_id} key={item.state_id}>{item.state}</option>
                 )
             })
         }
@@ -32,7 +30,7 @@ class Search extends Component {
             return data.map((item) => {
                 return(
                     <option value={item.restaurant_id} key={item._id}>
-                        {item.restaurant_name} | {item.address}
+                    {item.restaurant_name} | {item.address}
                     </option>
                 )
             })
@@ -41,53 +39,58 @@ class Search extends Component {
 
     handleCity = (event) => {
         let stateId = event.target.value;
-        fetch(`${restUrl}${stateId}`,{method: 'GET'})
+        fetch(`${restUrl}${stateId}`,{method:'GET'})
         .then((res) => res.json())
         .then((data) => {this.setState({restData:data}) })
     }
-        
-    
+
+    handleRest = (event) => {
+        console.log("inside handleRest>>>",this.props)
+        this.props.history.push(`/details?restId=${event.target.value}`)
+    }
+
+
+
     render(){
-        console.log(">>>>>>inside render")
+        console.log(">>>>inside render")
         return(
             <div id="search">
-            <div className="logo">
-                <span>D!</span>
+                <div className="logo">
+                    <span>D!</span>
+                </div>
+                <div id="heading">
+                    Find Best Place Near You
+                </div>
+                <div id="dropdown">
+                    <select onChange={this.handleCity}>
+                        <option>----SELECT LOCATION----</option>
+                        {this.renderCity(this.state.location)}
+                    </select>
+                    <select id="restSelect" onChange={this.handleRest}>
+                        <option>----SELECT Restaurants----</option>
+                        {this.renderRest(this.state.restData)}
+                    </select>
+                </div>
             </div>
-            <div id="heading">
-                Find Best Place Near You
-            </div>
-            <div id="dropdown">
-            <select onChange={this.handleCity}>
-                    <option>---SELECT LOCATION---</option>
-                    {this.renderCity(this.state.location)}
-                </select>
-                <select id="restSelect">
-                    <option>---SELECT RESTAURANT---</option>
-                    {this.renderRest(this.state.restData)}
-                </select>
-            </div>
-        </div>
         )
     }
 
-    // api calling on page load
+    // api calling on page load 
     componentDidMount(){
-        //console.log(">>>>>>inside.componentDidMount")
-        fetch(lurl,{method: 'GET'})
+        //console.log(">>>>inside componentDidMount")
+        fetch(lurl,{method:'GET'})
         // return promise
         .then((res) => res.json())
         // return data
         .then((data) => {
             //console.log(data)
             this.setState({location:data})
-    })
-    .catch((err) => {
-        console.log(err)
-    })
+        })
+        .catch((err) => {
+            console.log(err)
+        })
+    }
 
 }
 
-}
-
-export default Search;
+export default withRouter(Search);

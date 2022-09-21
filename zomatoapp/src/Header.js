@@ -20,7 +20,7 @@ class Header extends Component {
         this.setState({userData:''})
         this.props.history.push('/')
     }
-
+    
     conditionalHeader = () => {
         if(sessionStorage.getItem('ltk') !== null){
             let data = this.state.userData;
@@ -55,10 +55,10 @@ class Header extends Component {
         return(
             <header>
                 <div id="brand">
-                    Developer Funnel
+                    <Link to="/">Developer Funnel</Link>
                 </div>
                 <div id="social">
-                {this.conditionalHeader()}
+                   {this.conditionalHeader()}
                 </div>
                 </header>
         )
@@ -79,8 +79,8 @@ class Header extends Component {
             })
         })
     }
-
-
+   
+    
 
 }
 

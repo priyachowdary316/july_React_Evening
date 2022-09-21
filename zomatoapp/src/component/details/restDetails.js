@@ -9,9 +9,12 @@ import Header from '../../Header'
 
 const url = "http://zomatoajulypi.herokuapp.com/details"
 const menuUrl = "https://zomatoajulypi.herokuapp.com/menu"
+
 class Details extends Component{
+
     constructor(){
         super()
+
         this.state={
             details:'',
             menuList:'',
@@ -19,13 +22,16 @@ class Details extends Component{
             userItem:''
         }
     }
+
     addToCart = (data) => {
         this.setState({userItem:data})
     }
+
     proceed = () => {
         sessionStorage.setItem('menu',this.state.userItem);
         this.props.history.push(`/placeOrder/${this.state.details.restaurant_name}`)
     }
+
     render(){
         //let details = this.state.details
         let {details} = this.state
@@ -59,6 +65,7 @@ class Details extends Component{
                                 <Tab>About</Tab>
                                 <Tab>Contact</Tab>
                             </TabList>
+                            
                             <TabPanel>
                                 <h2>{details.restaurant_name}</h2>
                                 <p>
@@ -85,6 +92,7 @@ class Details extends Component{
             </>
         )
     }
+
     //api with async await 
     async componentDidMount(){
         let restId = this.props.location.search.split('=')[1];
@@ -93,4 +101,6 @@ class Details extends Component{
         this.setState({details: response.data[0],menuList:menuResponse.data})
     }
 }
+
+
 export default Details
