@@ -1,11 +1,9 @@
 import React,{Component} from 'react';
 import './placeOrder.css';
 import Header from '../../Header'
-
 const url = "http://zomatoajulypi.herokuapp.com/menuItem";
 const placeOrder = "http://localhost:3000/orders"
 class PlaceOrder extends Component{
-
     constructor(props){
         super(props)
 
@@ -21,11 +19,9 @@ class PlaceOrder extends Component{
             menuItem:''
         }
     }
-
     handleChange = (event) => {
         this.setState({[event.target.name]:event.target.value})
     }
-
     handleCheckout = () => {
         let obj = this.state;
         
@@ -55,17 +51,6 @@ class PlaceOrder extends Component{
     }
 
     render(){
-        if(sessionStorage.getItem('loginStatus') === 'LoggedOut'){
-            return(
-                <>
-                    <Header/>
-                    <center>
-                        <h2>Login First To Place Order</h2>
-                    </center>
-                </>
-            )
-
-        }
         return(
             <>
             <Header/>
@@ -115,7 +100,6 @@ class PlaceOrder extends Component{
             </>
         )
     }
-
     //calling api 
     componentDidMount(){
         let menuItem = sessionStorage.getItem('menu');

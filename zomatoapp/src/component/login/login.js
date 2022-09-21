@@ -2,7 +2,6 @@ import React,{Component} from 'react';
 import Header from '../../Header'
 
 const url = "https://developerjwt.herokuapp.com/api/auth/login";
-
 class Login extends Component{
 
     constructor(props){
@@ -38,8 +37,6 @@ class Login extends Component{
             }
         })
     }
-
-
     render(){
         return(
             <>
@@ -62,7 +59,6 @@ class Login extends Component{
                                     <input className="form-control" name="password"
                                     value={this.state.password} onChange={this.handleChange}/>
                                 </div>
-
                            </div>
                            <button className="btn btn-success" onClick={this.handleCheckout} >Login</button>
                    </div>
@@ -72,5 +68,4 @@ class Login extends Component{
         )
     }
 }
-
 export default Login;

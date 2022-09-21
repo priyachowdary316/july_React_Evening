@@ -2,8 +2,6 @@ import React,{Component} from 'react';
 import axios from 'axios';
 import Display from './displayOrder';
 import Header from '../../Header'
-
-
 const placeOrder = "http://localhost:3000/orders"
 class ViewOrder extends Component{
 
